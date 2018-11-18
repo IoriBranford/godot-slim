@@ -58,12 +58,12 @@ before_script:
     fi
 
 script:
-  - scons -j2 CC=$CC CXX=$CXX platform=$GODOT_TARGET $EXTRA_ARGS $OPTIONS $MODULES disable_3d=yes;
-    cp -r bin bin2d;
-    scons -j2 CC=$CC CXX=$CXX platform=$GODOT_TARGET $EXTRA_ARGS $OPTIONS $MODULES disable_advanced_gui=yes;
-    cp -r bin binsimpleui;
-    scons -j2 CC=$CC CXX=$CXX platform=$GODOT_TARGET $EXTRA_ARGS $OPTIONS $MODULES disable_3d=yes disable_advanced_gui=yes;
-    cp -r bin bin2dsimpleui
+  - scons -j2 CC=$CC CXX=$CXX platform=$GODOT_TARGET $EXTRA_ARGS $OPTIONS $MODULES disable_advanced_gui=yes
+    #cp -r bin binsimpleui;
+    #scons -j2 CC=$CC CXX=$CXX platform=$GODOT_TARGET $EXTRA_ARGS $OPTIONS $MODULES disable_3d=yes;
+    #cp -r bin bin2d;
+    #scons -j2 CC=$CC CXX=$CXX platform=$GODOT_TARGET $EXTRA_ARGS $OPTIONS $MODULES disable_3d=yes disable_advanced_gui=yes;
+    #cp -r bin bin2dsimpleui
 
 after_success:
   - ls -l bin*

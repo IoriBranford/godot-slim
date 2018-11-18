@@ -31,12 +31,12 @@ before_build:
   - SET "SCONS_CACHE=%SCONS_CACHE_ROOT%\master"
 
 build_script:
-- scons platform=%GD_PLATFORM% target=%TARGET% tools=%TOOLS% %OPTIONS% %MODULES% disable_3d=yes
-- xcopy /s bin bin2d
 - scons platform=%GD_PLATFORM% target=%TARGET% tools=%TOOLS% %OPTIONS% %MODULES% disable_advanced_gui=yes
-- xcopy /s bin binsimpleui
-- scons platform=%GD_PLATFORM% target=%TARGET% tools=%TOOLS% %OPTIONS% %MODULES% disable_3d=yes disable_advanced_gui=yes
-- xcopy /s bin bin2dsimpleui
+#- xcopy /s bin binsimpleui
+#- scons platform=%GD_PLATFORM% target=%TARGET% tools=%TOOLS% %OPTIONS% %MODULES% disable_3d=yes
+#- xcopy /s bin bin2d
+#- scons platform=%GD_PLATFORM% target=%TARGET% tools=%TOOLS% %OPTIONS% %MODULES% disable_3d=yes disable_advanced_gui=yes
+#- xcopy /s bin bin2dsimpleui
 
 after_build:
 - dir /s bin*
