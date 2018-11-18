@@ -58,7 +58,7 @@ before_script:
 script:
 - scons -j2 CC=$CC CXX=$CXX platform=$GODOT_TARGET $EXTRA_ARGS $OPTIONS $MODULES disable_advanced_gui=yes
 - if [ "$GODOT_TARGET" = "android" ]; then cd platform/android/java; ./gradlew build;
-  ls -l bin; cd ../../.. fi
+  ls -l bin; cd ../../..; fi
 after_success:
 - ls -l bin*
 - if [ "$GODOT_TARGET" = "osx" ]; then cp -r misc/dist/osx_tools.app ./Godot.app;
